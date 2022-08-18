@@ -130,8 +130,8 @@ router.post('/nail-custom', async(req, res) => {
          
         res.status(201).json({message: "Successfully submitted!! You will be receiving a email shortly, Please check your spam/junk folder."})
     }catch(err){
-        res.json({message: "sorry there was and error on the server",
-                    err: err
+        res.json({message: `sorry there was and error on the server ${err.error}`,
+                   
                                     })
         console.log(err)
     }
