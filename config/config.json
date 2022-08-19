@@ -1,10 +1,10 @@
 {
   "development": {
-    "username": "root",
-    "password": null,
-    "database": "database_development",
-    "storage" : "GetNailed", 
-    "dialect": "sqlite"
+    "username": "process.env.RDS_USERNAME",
+    "password": "process.env.RDS_PASSWORD",
+    "port": "process.env.RDS_PORT",
+    "host": "process.env.RDS_HOSTNAME",
+    "dialect": "mysql"
   },
   "test": {
     "username": "root",
