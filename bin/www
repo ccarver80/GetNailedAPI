@@ -8,8 +8,6 @@ var app = require('../app');
 var debug = require('debug')('api:server');
 var http = require('http');
 
-
-
 const { sequelize } = require('../models');
 
 /**
@@ -23,7 +21,7 @@ app.set('port', port);
   try {
 await sequelize.authenticate();
 await sequelize.sync();
-console.log(`Connection successful on port:${port}`)
+console.log(`Connection successful!! on port:${port}`)
 
 
 }catch(err) {

@@ -7,7 +7,6 @@ const cors = require('cors')
 const fileUpload = require('express-fileupload')
 const {sequelize} = require('./models')
 
-
 async function main() {
   await sequelize.sync()
 }
@@ -20,9 +19,14 @@ var usersRouter = require('./routes/users');
 const adminRouter =require('./routes/admin'); 
 const nailsRouter = require('./routes/nails')
 
+var corsOptions = {
+  origin: true,
+  methods: ['GET', 'PUT', 'POST'],
+  allowedHeaders: 'Content-Type',
 
+}
 var app = express();
-app.use(cors())
+app.use(cors(corsOptions))
 app.use(fileUpload())
 
 
