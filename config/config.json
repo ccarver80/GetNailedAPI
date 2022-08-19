@@ -14,7 +14,7 @@
     "dialect": "mysql"
   },
   "production": {
-    "use_env_variable": "DATABASE_URL",
+    "use_env_variable": "https://us-east-1.console.aws.amazon.com/rds/home?region=us-east-1#dbinstances:id=awseb-e-jrnm8xqfrp-stack-awsebrdsdatabase-b0eglkor9oqa",
     "dialect": "postgres",
     "dialectOptions": {
       "ssl": {
