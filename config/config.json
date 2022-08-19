@@ -14,10 +14,10 @@
     "dialect": "mysql"
   },
   "production": {
-    "username": "ccarver80",
-    "password": null,
-    "database": "database_test",
-    "host": "127.0.0.1",
+    "username": "process.env.RDS_USERNAME",
+    "password": "process.env.RDS_PASSWORD",
+    "port": "process.env.RDS_PORT",
+    "host": "process.env.RDS_HOSTNAME",
     "dialect": "mysql"
   }
 }
