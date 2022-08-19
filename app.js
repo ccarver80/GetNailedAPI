@@ -6,6 +6,7 @@ var logger = require('morgan');
 const cors = require('cors')
 const fileUpload = require('express-fileupload')
 const {sequelize} = require('./models')
+const pg = require('pg')
 
 async function main() {
   await sequelize.sync()
@@ -29,6 +30,21 @@ var app = express();
 app.use(cors(corsOptions))
 app.use(fileUpload())
 
+var connection = pg.createConnection({
+  host     : process.env.RDS_HOSTNAME,
+  user     : process.env.RDS_USERNAME,
+  password : process.env.RDS_PASSWORD,
+  port     : process.env.RDS_PORT
+});
+
+connection.connect(function(err) {
+  if (err) {
+    console.error('Database connection failed: ' + err.stack);
+    return;
+  }
+
+  console.log('Connected to database.');
+});
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
