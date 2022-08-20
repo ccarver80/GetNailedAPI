@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node_modules/sequelize-cli/lib/sequelize db:migrate "
+    "start": "nodemon ./bin/www"
   },
   "dependencies": {
     "body-parser": "^1.20.0",
