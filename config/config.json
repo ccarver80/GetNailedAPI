@@ -1,10 +1,10 @@
 {
   "development": {
-    "username": "ccarver80",
-    "password": "zumiez80",
+    "username": "root",
+    "password": null,
     "database": "database_development",
-    "host": "awseb-e-jrnm8xqfrp-stack-awsebrdsdatabase-0r63dycekvie.c3cccs5aoc7e.us-east-1.rds.amazonaws.com",
-    "dialect": "postgres"
+    "host": "127.0.0.1",
+    "dialect": "mysql"
   },
   "test": {
     "username": "root",
@@ -18,6 +18,6 @@
     "password": null,
     "database": "database_production",
     "host": "127.0.0.1",
-    "dialect": "postgres"
+    "dialect": "mysql"
   }
 }
