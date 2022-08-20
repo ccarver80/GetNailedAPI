@@ -4,7 +4,7 @@ const fileUpload = require('express-fileupload')
 const app = express();
 var bodyParser = require('body-parser')
 const nodemailer = require("nodemailer");
-require('dotenv').config()
+
 
 
 
