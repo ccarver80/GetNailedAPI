@@ -2,7 +2,7 @@
 
 {
   "development": {
-    "host"     : "awseb-e-jrnm8xqfrp-stack-awsebrdsdatabase-0r63dycekvie.c3cccs5aoc7e.us-east-1.rds.amazonaws.com",
+    "host"     : "process.env.RDS_HOSTNAME",
     "user"     : "process.env.RDS_USERNAME",
     "password" : "process.env.RDS_PASSWORD",
     "port"     : "5432",
