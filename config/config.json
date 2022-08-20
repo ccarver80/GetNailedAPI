@@ -6,20 +6,20 @@
     "user"     : "1",
     "password" : "1",
     "port"     : "1",
-    "dialect": "1"
+    "dialect": "postgres"
   },
   "test": {
     "host"     : "2",
     "user"     : "2",
     "password" : "2",
     "port"     : "2",
-    "dialect": "2"
+    "dialect": "postgres"
   },
   "production": {
     "host"     : "3",
     "user"     : "3",
     "password" : "3",
     "port"     : "3",
-    "dialect": "3"
+    "dialect": "postgres"
   }
 }
