@@ -51,7 +51,14 @@ router.post('/nails', async(req, res) => {
 router.post('/nail-custom', async(req, res) => {
     try{
 
-    
+        let style1;
+        let photo1; 
+
+        if(req.body.style1 === undefined){
+            style1 = "none selected"
+        }else {
+            nails.findByPk(req.body.style1)
+        }
 
         let file;
         let photo; 
@@ -70,7 +77,7 @@ router.post('/nail-custom', async(req, res) => {
             firstName: req.body.firstName,
             lastName: req.body.lastName,
             email: req.body.email,
-            style1: nails.findByPk(req.body.style1),
+            style1: style1,
             style2: photo,
             shape: req.body.shape,
             length: req.body.length,
@@ -89,6 +96,10 @@ router.post('/nail-custom', async(req, res) => {
 
         if(file != "none selected"){
             photo = `<img style='height:500px;' src=${process.env.HOST}nail-custom/${newCustom.id}/>`
+        }
+
+        if(style1 != "none selected"){
+            photo1 = `<img src=${process.env.HOST}nails/${style1}/>`
         }
 
         let transporter = nodemailer.createTransport({
@@ -116,7 +127,7 @@ router.post('/nail-custom', async(req, res) => {
             
             html: `<h1>You have a new custom order from! ${req.body.firstName} ${req.body.lastName}</h1>
                     <p><b>Email:</b>${req.body.email}</p>
-                    <p><b>Style picked:</b><img src=${process.env.HOST}nails/${req.body.style1}/><p>
+                    <p><b>Style picked:</b>${photo1}<p>
                     <p><b>Submitted Photo:</b>${photo}</p>
                     <p><b>Shape:</b>${req.body.shape}</p>
                     <p><b>Length:</b>${req.body.length}</p>
