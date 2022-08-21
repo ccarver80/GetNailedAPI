@@ -94,9 +94,9 @@ router.post('/nail-custom', async(req, res) => {
             specialRequests: req.body.specialRequests,
         })
 
-        if(file != "none selected"){
-            photo = `<img style='height:500px;' src=${process.env.HOST}nail-custom/${newCustom.id}/>`
-        }
+        // if(file != "none selected"){
+        //     photo = `<img style='height:500px;' src=${process.env.HOST}nail-custom/${newCustom.id}/>`
+        // }
 
         if(style1 != "none selected"){
             photo1 = `<img src=${process.env.HOST}nails/${style1}/>`
