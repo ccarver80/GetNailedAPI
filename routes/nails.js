@@ -59,7 +59,7 @@ router.post('/nail-custom', async(req, res) => {
             file = "none selected"
             photo = "none selected"
         }else {
-            file = req.files.style2.data
+            file = req.files.style2
             
         }
 
