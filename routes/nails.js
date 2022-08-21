@@ -60,15 +60,15 @@ router.post('/nail-custom', async(req, res) => {
             nails.findByPk(req.body.style1)
         }
 
-        let file;
-        let photo; 
-        if(req.files === null){
-            file = "none selected"
-            photo = "none selected"
-        }else {
-            file = req.files.style2.data
+        // let file;
+        // let photo; 
+        // if(req.files === null){
+        //     file = "none selected"
+        //     photo = "none selected"
+        // }else {
+        //     file = req.files.style2.data
             
-        }
+        // }
 
       
 
@@ -78,7 +78,7 @@ router.post('/nail-custom', async(req, res) => {
             lastName: req.body.lastName,
             email: req.body.email,
             style1: style1,
-            style2: photo,
+            // style2: photo,
             shape: req.body.shape,
             length: req.body.length,
             rt: req.body.rt,
@@ -128,7 +128,7 @@ router.post('/nail-custom', async(req, res) => {
             html: `<h1>You have a new custom order from! ${req.body.firstName} ${req.body.lastName}</h1>
                     <p><b>Email:</b>${req.body.email}</p>
                     <p><b>Style picked:</b>${photo1}<p>
-                    <p><b>Submitted Photo:</b>${photo}</p>
+                   
                     <p><b>Shape:</b>${req.body.shape}</p>
                     <p><b>Length:</b>${req.body.length}</p>
                     <h1>Nail Size:</h1>
