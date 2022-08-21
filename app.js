@@ -19,7 +19,12 @@ var usersRouter = require('./routes/users');
 const adminRouter =require('./routes/admin'); 
 const nailsRouter = require('./routes/nails')
 
+var corsOptions = {
+  origin: '*',
+  methods: ['GET', 'PUT', 'POST'],
+  allowedHeaders: 'Content-Type',
 
+}
 var app = express();
 app.use(cors(corsOptions))
 app.use(fileUpload())
