@@ -43,7 +43,7 @@ router.post('/nails', async(req, res) => {
 router.post('/nail-custom', async(req, res) => {
     try{
 
-        
+        res.header('Access-Control-Allow-Origin', '*')
 
         let file;
         let photo; 
