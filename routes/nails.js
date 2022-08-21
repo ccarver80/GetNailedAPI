@@ -23,6 +23,14 @@ const custom = require('../models'). CustomOrders
 router.use(express.json());
 app.use(fileUpload())
 
+app.use((req, res, next) => {
+    res.header('Access-Control-Allow-Origin', '*')
+    res.header('Access-Control-Allow-Credentials', true)
+    res.header('Access-Control-Allow-Methods', 'POST, GET, OPTIONS')
+    res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept')
+    next();
+  });
+
 
 
 
@@ -43,7 +51,7 @@ router.post('/nails', async(req, res) => {
 router.post('/nail-custom', async(req, res) => {
     try{
 
-        res.header('Access-Control-Allow-Origin', '*')
+        
 
         let file;
         let photo; 
