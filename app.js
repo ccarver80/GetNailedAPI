@@ -22,7 +22,6 @@ const nailsRouter = require('./routes/nails')
 var corsOptions = {
   origin: '*',
   methods: ['GET', 'PUT', 'POST'],
-  allowedHeaders: 'Content-Type',
 
 }
 var app = express();
