@@ -20,7 +20,7 @@ const adminRouter =require('./routes/admin');
 const nailsRouter = require('./routes/nails')
 
 var corsOptions = {
-  origin: 'http://localhost:3000',
+  origin: '*',
   methods: ['GET', 'PUT', 'POST'],
   allowedHeaders: 'Content-Type',
 
