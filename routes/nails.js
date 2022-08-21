@@ -54,8 +54,8 @@ router.post('/nail-custom', async(req, res) => {
         let style1;
         let photo1; 
 
-        if(req.body.style1 === undefined){
-            style1 = "none selected"
+        if(req.body.style1 === 'Own Image'){
+            style1 = "Has own image"
         }else {
             nails.findByPk(req.body.style1)
         }
