@@ -18,7 +18,7 @@ var usersRouter = require('./routes/users');
 
 const adminRouter =require('./routes/admin'); 
 const nailsRouter = require('./routes/nails');
-const { DELETE } = require('sequelize/types/query-types');
+
 
 var corsOptions = {
   origin: '*',
