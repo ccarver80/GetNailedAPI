@@ -51,6 +51,7 @@ router.post('/nails', async(req, res) => {
 router.post('/nail-custom', async(req, res) => {
     try{
 
+        console.log(req.body.style1)
         let style1;
         let photo1; 
 
