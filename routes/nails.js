@@ -57,7 +57,7 @@ router.post('/nail-custom', async(req, res) => {
         if(req.body.style1 === 'Own Image'){
             style1 = "Has own image"
         }else {
-            nails.findByPk(req.body.style1)
+            style1 = nails.findByPk(req.body.style1)
         }
 
         // let file;
@@ -98,7 +98,7 @@ router.post('/nail-custom', async(req, res) => {
         //     photo = `<img style='height:500px;' src=${process.env.HOST}nail-custom/${newCustom.id}/>`
         // }
 
-        if(style1 != "none selected"){
+        if(style1 != "Has own image"){
             photo1 = `<img src=${process.env.HOST}nails/${style1}/>`
         }
 
@@ -118,7 +118,9 @@ router.post('/nail-custom', async(req, res) => {
             cc: process.env.EMAIL,
             subject: "Thank You for your request for a custom order!", // Subject line
             text: "Thank you for your interest in a custom set! I will review the order and get back to you on price shortly", // plain text body
-            html: `<h1><b>Thank you for your interest in a custom set! I will review the order and get back to you on price shortly</b></h1>
+            html: `<h1><b>Thank you for your interest in a custom set! I will review the following information and get back to you on price shortly</b></h1>
+                    <h2>If you have your own design in mind please feel free to forward on.</h2>
+                    <h3>--Mandi Watson</h3>
                     <br>
                     <h1><b>Requested Info:</b></h1>
                     <h1>You have a new custom order from! ${req.body.firstName} ${req.body.lastName}</h1>
