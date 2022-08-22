@@ -269,7 +269,7 @@ router.get('/nail-set/:id', async(req, res) => {
             }
         })
 
-        res.json(singleNailSet).status(200)
+        res.send(singleNailSet).status(200)
     }catch(err) {
         console.log(err)
     }
