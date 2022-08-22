@@ -17,13 +17,14 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
 const adminRouter =require('./routes/admin'); 
-const nailsRouter = require('./routes/nails')
+const nailsRouter = require('./routes/nails');
+const { DELETE } = require('sequelize/types/query-types');
 
 var corsOptions = {
   origin: '*',
-  methods: ['GET', 'PUT', 'POST'],
-
+  methods: ['GET', 'PUT', 'POST', 'DELETE'],
 }
+
 var app = express();
 app.use(cors(corsOptions))
 app.use(fileUpload())
