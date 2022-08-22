@@ -115,17 +115,13 @@ router.post('/nail-custom', async(req, res) => {
           let customer = await transporter.sendMail({
             from: '"Mandi Watson" <get_nailed_art@outlook.com>', // sender address
             to: req.body.email, // list of receivers
+            cc: process.env.EMAIL,
             subject: "Thank You for your request for a custom order!", // Subject line
             text: "Thank you for your interest in a custom set! I will review the order and get back to you on price shortly", // plain text body
-            html: "<b>Thank you for your interest in a custom set! I will review the order and get back to you on price shortly</b>", // html body
-          });
-
-          let order = await transporter.sendMail({
-            from: '"New CUSTOM Order" <get_nailed_art@outlook.com>', // sender address
-            to: process.env.EMAIL, // list of receivers
-            subject: "You Have A New Custom Order!", // Subject line
-            
-            html: `<h1>You have a new custom order from! ${req.body.firstName} ${req.body.lastName}</h1>
+            html: `<h1><b>Thank you for your interest in a custom set! I will review the order and get back to you on price shortly</b></h1>
+                    <br>
+                    <h1><b>Requested Info:</b></h1>
+                    <h1>You have a new custom order from! ${req.body.firstName} ${req.body.lastName}</h1>
                     <p><b>Email:</b>${req.body.email}</p>
                     <p><b>Style picked:</b>${photo1}<p>
                    
@@ -143,9 +139,38 @@ router.post('/nail-custom', async(req, res) => {
                     <p><b>Left Ring:</b> ${req.body.lr}</p>
                     <p><b>Left Pinky:</b> ${req.body.lp}</p>
                     <p><b>Special Requests:</b> ${req.body.specialRequests}</p>
-                    
-                      ` // html body
+            
+
+            
+            `, // html body
           });
+
+        //   let order = await transporter.sendMail({
+        //     from: '"New CUSTOM Order" <get_nailed_art@outlook.com>', // sender address
+        //     to: process.env.EMAIL, // list of receivers
+        //     subject: "You Have A New Custom Order!", // Subject line
+            
+        //     html: `<h1>You have a new custom order from! ${req.body.firstName} ${req.body.lastName}</h1>
+        //             <p><b>Email:</b>${req.body.email}</p>
+        //             <p><b>Style picked:</b>${photo1}<p>
+                   
+        //             <p><b>Shape:</b>${req.body.shape}</p>
+        //             <p><b>Length:</b>${req.body.length}</p>
+        //             <h1>Nail Size:</h1>
+        //             <p><b>Right Thumb:</b> ${req.body.rt}</p>
+        //             <p><b>Right Index:</b> ${req.body.ri}</p>
+        //             <p><b>Right Middle:</b> ${req.body.rm}</p>
+        //             <p><b>Right Ring:</b> ${req.body.rm}</p>
+        //             <p><b>Right Pinky:</b> ${req.body.rp}</p>
+        //             <p><b>Left Thumb:</b> ${req.body.lt}</p>
+        //             <p><b>Left Index:</b> ${req.body.li}</p>
+        //             <p><b>Left Middle:</b> ${req.body.lm}</p>
+        //             <p><b>Left Ring:</b> ${req.body.lr}</p>
+        //             <p><b>Left Pinky:</b> ${req.body.lp}</p>
+        //             <p><b>Special Requests:</b> ${req.body.specialRequests}</p>
+                    
+        //               ` // html body
+        //   });
          
         res.status(201).json({message: "Successfully submitted!! You will be receiving a email shortly, Please check your spam/junk folder."})
     }catch(err){
