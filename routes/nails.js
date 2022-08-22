@@ -221,7 +221,7 @@ router.delete('/nails/:id', async(req, res) => {
           destroyNails.destroy()  
       
         
-        res.status(204).json({message: "Successfully Deleted Nails"})
+        res.status(201).json({message: "Successfully Deleted Nails"})
     }catch(err) {
         console.log(err)
     }
