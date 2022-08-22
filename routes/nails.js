@@ -202,7 +202,8 @@ router.get('/nail-custom/:id', async(req, res) => {
 
 router.put('/nails/:id', async(req, res) => {
     try{
-        const EditNails = await nails.update({picture: req.files.picture.data, title: req.body.title, description: req.body.description }, {
+        
+        const EditNails = await nails.update({picture: req.files.picture.data, title: req.body.title, description: req.body.description, shape: req.body.shape, length: req.body.length, size: req.body.size, price: req.body.price, }, {
             where: {
                 id: req.params.id
             }
