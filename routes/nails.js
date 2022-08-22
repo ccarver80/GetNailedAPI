@@ -210,6 +210,7 @@ router.put('/nails/:id', async(req, res) => {
         })
         res.status(201).json({message: "Update Successful"})
     }catch(err) {
+        res.status(404).json({message: "Something went wrong on the server"})
         console.log(err)
     }
 })
@@ -268,7 +269,7 @@ router.get('/nail-set/:id', async(req, res) => {
             }
         })
 
-        res.send(singleNailSet).status(200)
+        res.json(singleNailSet).status(200)
     }catch(err) {
         console.log(err)
     }
