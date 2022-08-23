@@ -18,7 +18,7 @@ var usersRouter = require('./routes/users');
 
 const adminRouter =require('./routes/admin'); 
 const nailsRouter = require('./routes/nails');
-
+const checkoutRouter = require('./routes/checkout')
 
 var corsOptions = {
   origin: '*',
@@ -44,6 +44,7 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use(adminRouter)
 app.use(nailsRouter)
+app.ust(checkoutRouter)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
